@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService} from '../../services/validate.service';
 import {  AuthService } from "../../services/auth.service";
-import {FlashMessagesService} from 'angular2-flash-messages';
-import { Router} from '@angular/router';
+import {FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -11,10 +11,14 @@ import { Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  name: String;
-  username: String;
+  title = "Dr";
+  firstName: String;
+  surname: String;
+  registrationNumber: String;
   email: String;
+  phoneMobile: String;
   password: String;
+  role: String;
 
 
   constructor(
@@ -30,9 +34,13 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit() {
    const user = {
-     name: this.name,
+     title: this.title,
+     firstName: this.firstName,
+     surname: this.surname,
      email: this.email,
-     username: this.username,
+     phoneMobile: this.phoneMobile,
+     registrationNumber: this.registrationNumber,
+     role: this.role,
      password: this.password
    }
 
@@ -47,14 +55,14 @@ export class RegisterComponent implements OnInit {
   }
 
     //register user
-
     this.authService.registerUser(user).subscribe(data => {
       if(data.success) {
         this.flashMessage.show("Registration Successful", {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/login']);
-      } else
+      } else {
       this.flashMessage.show("Registration Failed", {cssClass: 'alert-danger', timeout: 3000});
       this.router.navigate(['/register']);
+    }
     })
   }
 
