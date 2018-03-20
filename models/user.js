@@ -1,23 +1,45 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const Schema = mongoose.Schema;
+const practice = require('../models/practice');
 
 // User Schema
+// User types are defined as: practitioner, specalist, delegate
 const UserSchema = mongoose.Schema({
-    name: {
+   title: {
+        type: String
+    },
+    firstName: {
+        type: String
+    },
+    surname: {
         type: String
     },
     email: {
         type: String,
+        required: true,
+        unique: true
+    },
+    phoneMobile: {
+        type: String,
         required: true
     },
-    username: {
+
+    practices: [{ type: Schema.Types.ObjectId, ref: 'Practice'}],
+    
+    registrationNumber: {
         type: String,
         required: true
     },
     password: {
         type: String,
         required: true
+    },
+    role: {
+        type: String,
+        required: true,
+        default: 'practitioner'
     }
 });
 
@@ -27,8 +49,8 @@ module.exports.getUserById = function(id, callback) {
     User.findById(id, callback);
 }
 
-module.exports.getUserByUserName = function(username, callback) {
-    const query = {username: username}
+module.exports.getUserByEmail = function(email, callback) {
+    const query = {email: email}
     User.findOne(query, callback);
 }
 

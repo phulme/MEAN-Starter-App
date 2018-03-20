@@ -9,10 +9,14 @@ const config = require('../config/database');
 // Register
 router.post('/register', (req, res, next) => {
  let newUser = new User({
-     name: req.body.name,
-     email: req.body.email,
-     username: req.body.username,
-     password: req.body.password
+    title: req.body.title,
+    firstName: req.body.firstName,
+    surname: req.body.surname,
+    email: req.body.email,
+    phoneMobile: req.body.phoneMobile,
+    registrationNumber: req.body.registrationNumber,
+    password: req.body.password,
+    role: req.body.role
  });
 
 
@@ -34,10 +38,10 @@ router.get('/profile', passport.authenticate('jwt', {session: false}),  (req, re
 
    // AUthenticate
 router.post('/authenticate', (req, res, next) => {
-    const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.password;
 
-    User.getUserByUserName(username, (err, user) => {
+    User.getUserByEmail(email, (err, user) => {
         if(err) throw err;
         if(!user) {
             return res.json({success: false, msg: 'User not found'});
@@ -55,8 +59,9 @@ router.post('/authenticate', (req, res, next) => {
                     token: `Bearer ${token}`,
                     user: {
                         id: user._id,
-                        name: user.name,
-                        username: user.username,
+                        firstName: user.firstName,
+                        surname: User.surname,
+                        registrationNumber: user.registrationNumber,
                         email: user.email
                     }
                 });

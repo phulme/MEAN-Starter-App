@@ -20,12 +20,12 @@ mongoose.connection.on('error', (err ) => {
 const app = express();
 
 const users = require('./routes/users');
+const practices = require('./routes/practices');
 
 //Port Number
 const port = process.env.PORT || 8080;
 
 //CORS Middleware will allow Angular access from seperate domain
-
 app.use(cors());
 
 //Set static folder
@@ -43,6 +43,7 @@ require('./config/passport')(passport);
 //require('./config/passport');
  
 app.use('/users', users);
+app.use('/practices', practices);
 
 //Index route
 app.get('/', (req, res) => {
