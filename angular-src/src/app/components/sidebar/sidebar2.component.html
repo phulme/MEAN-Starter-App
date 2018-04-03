@@ -1,0 +1,32 @@
+
+<div class="list-group">
+    <a class="list-group-item" data-remote="true" routerLink="/dashboard" id="dash_cat" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <span data-feather="home"></span>Dashboard</a>
+
+    <a class="list-group-item" data-remote="true" href="#sub_ref_menu" id="ref_menu" data-toggle="collapse" data-parent="#sub_cref_menu">
+        <span>
+            <span data-feather="send"></span>Referrals</span>
+    </a>
+    <div class="collapse list-group-submenu" id="sub_ref_menu">
+        <a routerLink="/referrals" routerLinkActive="active-link-blue" [routerLinkActiveOptions]="{exact: true}" class="list-group-item sub-item" data-parent="#sub_ref_menu" style="padding-left: 58px;">Create</a>
+        <a routerLink="/referrals"  routerLinkActive="active-link-blue" [routerLinkActiveOptions]="{exact: true}" class="list-group-item sub-item" data-parent="#sub_ref_menu" style="padding-left: 58px;">Find</a>
+    </div>
+
+
+    <a class="list-group-item" data-remote="true" routerLink="/pathology" id="categoria_1" routerLinkActive="active-link-red" [routerLinkActiveOptions]="{exact: true}">
+        <span>
+            <span data-feather="droplet"></span>Pathology</span>
+    </a>
+
+    <a class="list-group-item" data-remote="true" routerLink="/imaging" id="categoria_2" routerLinkActive="active-link-green" [routerLinkActiveOptions]="{exact: true}">
+        <span>
+            <span data-feather="camera"></span>
+            Imaging</span>
+    </a>
+
+    <a class="list-group-item" data-remote="true" routerLink="/reports" id="categoria_3" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <span>
+            <span data-feather="book"></span>
+            Reports</span>
+    </a>
+</div>

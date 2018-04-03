@@ -1,2 +1,94 @@
-<h2>Dashboard</h2>
-<p>Welcome to your dashboard</p>
+
+<!-- START page -->
+    <!-- START INDVIDUAL STATS -->
+  <H4>Your Statics</H4>
+<div class="row">
+
+  
+  <!-- START CARD -->
+    <div class="col-md-4">
+    <div class="card text-dark bg-transparent card border-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-primary text-white"><span data-feather="send"></span><span class="padMe">Referrals</span></div>  
+        <div class="card-body">
+          <h4 class="text-primary"><i data-feather="eye"></i> Review: <span class="text-stat"> {{ ind_refferal_review }} </span></h4>
+          <H4 class="text-primary"><i data-feather="activity"></i> Open: <span class="text-stat"> {{ ind_refferal_open }} </span></H4>
+          <H4 class="text-primary"><i data-feather="eye-off"></i> Expired: <span class="text-stat"> {{ ind_refferal_expired }} </span></H4>
+          
+        </div>
+      </div>
+      </div>
+      <!-- END CARD -->
+
+      <div class="col-md-4">
+      <div class="card text-dark bg-transparent card border-danger mb-3" style="max-width: 18rem;">
+          <div class="card-header bg-danger text-white"><span data-feather="droplet"></span><span class="padMe">Pathology</span></div>
+          <div class="card-body">
+              <h4 class="text-danger"><i data-feather="eye"></i> Review: <span class="text-stat"> {{ ind_pathology_review }} </span></h4>
+              <H4 class="text-danger"><i data-feather="activity"></i> Open: <span class="text-stat"> {{ ind_pathology_open }} </span></H4>
+              <H4 class="text-danger"><i data-feather="eye-off"></i> Expired: <span class="text-stat">{{ ind_pathology_expired }}</span></H4>
+              
+            </div>
+        </div>
+      </div>
+
+        <div class="col-md-4">
+        <div class="card text-dark card bg-transparent border-success mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-success text-white"><span data-feather="camera"></span><span class="padMe">Imaging</span></div>
+            <div class="card-body">
+                <h4 class="text-success"><i data-feather="eye"></i><span class="padMeTo">Review:</span> <span class="text-stat">{{ ind_imaging_review }}</span></h4>
+                <H4 class="text-success"><i data-feather="activity"></i><span class="padMeTo">Open: </span><span class="text-stat">{{ ind_imaging_open }}</span></H4>
+                <H4 class="text-success"><i data-feather="eye-off"></i><span class="padMeTo">Expired: </span><span class="text-stat">{{ ind_imaging_expired }}</span></H4>
+                
+              </div>
+          </div>
+        </div>
+
+        <!-- END INDIVIDUAL STATS -->
+</div>
+        <!-- START PRACTICE STATS -->
+        <h4>Strathfieldsaye Primary</h4>
+<div class="row">
+    
+  <!-- START CARD -->
+  <div class="col-md-4">
+      <div class="card text-dark bg-transparent card border-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header bg-primary text-white"><span data-feather="send"></span> Referrals</div>  
+          <div class="card-body">
+            <h4 class="text-primary"><i data-feather="eye"></i> Review: <span class="text-stat"> {{ prac_refferal_review }} </span></h4>
+            <H4 class="text-primary"><i data-feather="activity"></i> Open: <span class="text-stat"> {{ prac_refferal_open }} </span></H4>
+            <H4 class="text-primary"><i data-feather="eye-off"></i> Expired: <span class="text-stat"> {{ prac_refferal_expired }} </span></H4>
+            
+          </div>
+        </div>
+        </div>
+        <!-- END CARD -->
+  
+        <div class="col-md-4">
+        <div class="card text-dark bg-transparent card border-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-danger text-white"><span data-feather="droplet"></span> Pathology</div>
+            <div class="card-body">
+                <h4 class="text-danger"><i data-feather="eye"></i> Review: <span class="text-stat"> {{ prac_pathology_review }} </span></h4>
+                <H4 class="text-danger"><i data-feather="activity"></i> Open: <span class="text-stat"> {{ prac_pathology_open }} </span></H4>
+                <H4 class="text-danger"><i data-feather="eye-off"></i> Expired: <span class="text-stat">{{ prac_pathology_expired }}</span></H4>
+                
+              </div>
+          </div>
+        </div>
+  
+          <div class="col-md-4">
+          <div class="card text-dark card bg-transparent border-success mb-3" style="max-width: 18rem;">
+              <div class="card-header bg-success text-white"><span data-feather="camera"></span> Imaging</div>
+              <div class="card-body">
+                  <h4 class="text-success"><i data-feather="eye"></i> Review: <span class="text-stat">{{ prac_imaging_review }}</span></h4>
+                  <H4 class="text-success"><i data-feather="activity"></i> Open: <span class="text-stat">{{ prac_imaging_open }}</span></H4>
+                  <H4 class="text-success"><i data-feather="eye-off"></i> Expired: <span class="text-stat">{{ prac_imaging_expired }}</span></H4>
+                  
+                </div>
+            </div>
+          </div>
+        <!-- END PRACTICE STATS -->
+      </div>
+
+    <!-- END of main page section -->
+
+

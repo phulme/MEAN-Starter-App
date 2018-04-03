@@ -1,0 +1,39 @@
+body {
+    font-size: .875rem;
+  }
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top;
+    margin-right: 5px;
+  }
+  
+  .list-group {
+    position: sticky;
+    top: 80px; /* Height of navbar */
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background: #dfe2e4;  
+}
+
+
+  .list-group-item {
+    border: none;
+    font-weight: 500;
+    color: #333;
+    background: #dfe2e4;
+  }
+
+
+.active-link-red { 
+  color: red !important;
+}
+.active-link-blue { 
+  color: #007bff !important;
+}
+.active-link-green { 
+  color: green !important;
+}

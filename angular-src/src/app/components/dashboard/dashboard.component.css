@@ -1,0 +1,39 @@
+
+  .text-stat {
+    float: right;
+    color:#8c8c8c;
+    font-weight: 500;
+    font-size: 1.175rem;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 1.175rem;
+  
+  }
+
+  body {
+    font-size: .875rem;
+    
+  }
+
+  .text-white {
+    font-weight: 500;
+    letter-spacing: .90px;
+    display: flex;
+    align-items: center; /* align vertical */
+    padding-left: 20px;
+  }
+
+  .padMe {
+    display: block;
+    padding: .1 rem .5rem;
+  }
+
+  .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top;
+    margin-right: 5px;
+  }
+  

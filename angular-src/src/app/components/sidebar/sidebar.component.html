@@ -1,0 +1,48 @@
+<nav class="d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+
+    <ul class="nav flex-column">
+      <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/dashboard" >
+          <span data-feather="home"></span>
+          Dashboard
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <!-- Referrals Menu Items -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="refDropdown" data-toggle="dropdown" routerLink="/referrals" aria-haspopup="true"
+          aria-expanded="false">
+          <span data-feather="send"></span>Referrals</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">My Referrals</a>
+          <a class="dropdown-item" href="#">Create</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Search</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pathology">
+          <span data-feather="droplet"></span>
+          Pathology
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/imaging">
+          <span data-feather="camera"></span>
+          Imaging
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reports">
+          <span data-feather="book"></span>
+          Reports
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>

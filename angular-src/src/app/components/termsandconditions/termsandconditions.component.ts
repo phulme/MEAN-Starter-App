@@ -10,6 +10,7 @@ export class TermsandconditionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -19,15 +19,47 @@ import { AuthService } from "./services/auth.service";
 import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
 
 import { AuthGuard } from "./guards/auth.guard";
+import { ReferralsComponent } from './components/referrals/referrals.component';
+import { PathologyComponent } from './components/pathology/pathology.component';
+import { ImagingComponent } from './components/imaging/imaging.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'profile', component: ProfileComponent,  canActivate:[AuthGuard]},
-  {path: 'terms', component: TermsandconditionsComponent}
+  {path: '', 
+   component: HomeComponent},
+  {path: 'register', 
+  component: RegisterComponent},
+
+  {path: 'login', 
+  component: LoginComponent},
+
+  {path: 'dashboard', 
+  component: DashboardComponent, 
+  canActivate:[AuthGuard]},
+
+  {path: 'profile', 
+  component: ProfileComponent,  
+  canActivate:[AuthGuard]},
+
+  {path: 'terms', 
+  component: TermsandconditionsComponent},
+  {path: 'referrals', 
+  component: ReferralsComponent, 
+  canActivate:[AuthGuard]},
+
+  {path: 'pathology', 
+  component: PathologyComponent, 
+  canActivate:[AuthGuard]},
+
+  {path: 'imaging', 
+  component: ImagingComponent, 
+  canActivate:[AuthGuard]},
+  
+  {path: 'reports', 
+  component: ReportsComponent, 
+  canActivate:[AuthGuard]}
 ]
 @NgModule({
   declarations: [
@@ -38,7 +70,12 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    TermsandconditionsComponent
+    TermsandconditionsComponent,
+    ReferralsComponent,
+    PathologyComponent,
+    ImagingComponent,
+    SidebarComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
