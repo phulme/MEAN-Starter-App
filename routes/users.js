@@ -18,8 +18,6 @@ router.post('/register', (req, res, next) => {
     password: req.body.password,
     role: req.body.role
  });
-
-
  User.addUser(newUser, (err, user) => {
      if(err) {
          res.json({success: false, msg: 'Failed to register user'});
@@ -32,9 +30,23 @@ router.post('/register', (req, res, next) => {
 
 // Profile
 router.get('/profile', passport.authenticate('jwt', {session: false}),  (req, res, next) => {
-    console.log('Start Profile:');
+    //console.log('Start Profile:');
     res.json({user: req.user});
    });
+
+   // Get Users by Role
+   router.get('/role/:role', (req, res, next) => {
+       role = req.params.role;
+       User.getUsersByRole(role, function(err, users){
+           if (err) {
+               res.send('Unable to get Users by Role')
+           } else {
+            res.json(users);
+        }
+
+    })
+});
+
 
    // AUthenticate
 router.post('/authenticate', (req, res, next) => {

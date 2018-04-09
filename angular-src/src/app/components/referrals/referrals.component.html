@@ -1,6 +1,22 @@
-
-<p>
-  referrals works!
-</p>
-
-
+<h3>
+  ALL Referrals
+</h3>
+<h5>This page is temp only used for testing</h5>
+<div *ngIf="referrals">
+  <ul class="list-group">
+    <h5>Patient</h5>
+    <li class="list-group-item" *ngFor="let referral of referrals">Firstname: {{ referral.patient.firstname }}</li>
+    <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.patient.surname }}</li>
+    <li class="list-group-item" *ngFor="let referral of referrals">Medicare Number: {{ referral.patient.medicarenumber }}</li>
+  </ul>
+  <h5>Doctor</h5>
+  <li class="list-group-item" *ngFor="let referral of referrals">Title: {{ referral.practioner.title }}</li>
+  <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.practioner.surname }}</li>
+  <li>Specialist</li>
+  <li class="list-group-item" *ngFor="let referral of referrals">Title: {{ referral.specialist.title }}</li>
+  <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.specialist.surname }}</li>
+  <li>
+    <h5>Details</h5>
+  </li>
+  <li class="list-group-item" *ngFor="let referral of referrals">Description: {{ referral.description }}</li>
+</div>

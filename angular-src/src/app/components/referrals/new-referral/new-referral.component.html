@@ -1,0 +1,69 @@
+<div class="col-md-10">
+  <form (submit)="onNewReferralSubmit()">
+  
+    <h4>Patient Details</h4>
+    <div class="form-group">
+      <label for="p_firstname"></label>
+      <input class="form-control" type="text" [(ngModel)]="p_firstname"  name="p_firstname" id="p_firstname" placeholder="Patient First Name">
+   
+        <label for="p_middlename"></label>
+        <input  class="form-control" type="text" [(ngModel)]="p_middlename"  name="p_middlename" id="p_middlename" placeholder="Patient Middle Name">
+
+          <label for="p_surname"></label>
+          <input  class="form-control" type="text" [(ngModel)]="p_surname"  name="p_surname" id="p_surname" placeholder="Patient Surname">
+        </div>
+  
+        <div class="form-group">
+            <label for="p_email"></label>
+            <input  class="form-control" type="text" [(ngModel)]="p_email"  name="p_email" id="p_email" placeholder="Preferred Email">
+    
+              <label for="p_phone"></label>
+              <input  class="form-control" type="text" [(ngModel)]="p_phone"  name="p_phone" id="p_phone" placeholder="Mobile Phone">
+            </div>
+  
+            <div class="form-group">
+                <label for="p_medicarenumber"></label>
+                <input  class="form-control" type="text" [(ngModel)]="p_medicarenumber"  name="p_medicarenumber" id="p_medicarenumber" placeholder="Medicare Number">
+              </div>
+  
+  <h4>Referring Practioner</h4>
+            <!-- need to make dropdown -->
+              <div class="form-group">
+                  <label for="practice"></label>
+                  <input  class="form-control" type="text" [(ngModel)]="practice"  name="practice" id="practice" placeholder="Practice">
+    
+                  <select class="form-control" name="specialist" ngModel>
+                      <option value="" disabled>Practioner</option>
+                      <option *ngFor="let practioner of practioners" [ngValue]=  practioner._id >
+                          {{ practioner.firstName }} {{ practioner.surname }}
+                        </option>
+                  </select>
+                  </div>
+  <h4>Specialst</h4>
+    <!-- need to make dropdown -->
+    <div class="form-group">
+        <label for="specialist"></label>
+        <select class="form-control" name="specialist" ngModel>
+            <option value="" disabled>Choose a specialist</option>
+            <option *ngFor="let specialist of specialists" [ngValue]=  specialist._id >
+                {{ specialist.firstName }} {{ specialist.surname }}
+              </option>
+        </select>
+        
+      </div>
+      
+      <h4>Details</h4>
+        <!-- need to make dropdown -->
+    <div class="form-group">
+        <label for="description"></label>
+        <textarea class="form-control" [(ngModel)]="description"  name="description" id="description" placeholder="description"></textarea>
+
+          <label for="expiry"></label>
+          <input  class="form-control" type="date" [(ngModel)]="expiry"  name="expiry">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+
+</div>

@@ -27,6 +27,9 @@ body {
     background: #dfe2e4;
   }
 
+  a:hover { 
+    color: gray;
+}
 
 .active-link-red { 
   color: red !important;

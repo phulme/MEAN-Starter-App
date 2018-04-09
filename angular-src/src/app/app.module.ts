@@ -16,6 +16,7 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 
 import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
+import { ReferralsService } from "./services/referrals.service"
 import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
 
 import { AuthGuard } from "./guards/auth.guard";
@@ -24,6 +25,7 @@ import { PathologyComponent } from './components/pathology/pathology.component';
 import { ImagingComponent } from './components/imaging/imaging.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { NewReferralComponent } from './components/referrals/new-referral/new-referral.component';
 
 
 const appRoutes: Routes = [
@@ -45,8 +47,13 @@ const appRoutes: Routes = [
 
   {path: 'terms', 
   component: TermsandconditionsComponent},
+
   {path: 'referrals', 
   component: ReferralsComponent, 
+  canActivate:[AuthGuard]},
+
+  {path: 'referrals/new', 
+  component: NewReferralComponent, 
   canActivate:[AuthGuard]},
 
   {path: 'pathology', 
@@ -75,7 +82,8 @@ const appRoutes: Routes = [
     PathologyComponent,
     ImagingComponent,
     SidebarComponent,
-    ReportsComponent
+    ReportsComponent,
+    NewReferralComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +92,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService, FlashMessagesService, AuthService, AuthGuard],
+  providers: [ValidateService, FlashMessagesService, AuthService, ReferralsService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  showSidemenu = ['/dashboard', '/referrals', '/pathology','/imaging', '/profile', '/reports'];
+  showSidemenu = ['/dashboard', '/referrals','/referrals/referrals', '/referrals/new','/pathology','/imaging', '/profile', '/reports'];
 
   constructor(private router: Router) { 
     

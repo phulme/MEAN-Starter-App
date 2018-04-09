@@ -65,6 +65,11 @@ module.exports.addUser = function(newUser, callback){
     })
 }
 
+module.exports.getUsersByRole = function(role, callback) {
+    const query = {role: role};
+    User.find(query, callback);
+}
+
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if(err) throw err;

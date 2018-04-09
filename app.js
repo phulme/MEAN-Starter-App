@@ -19,8 +19,10 @@ mongoose.connection.on('error', (err ) => {
 
 const app = express();
 
+// require the routes for the app
 const users = require('./routes/users');
 const practices = require('./routes/practices');
+const referrals = require('./routes/referrals');
 
 //Port Number
 const port = process.env.PORT || 8080;
@@ -40,10 +42,11 @@ app.use(passport.session());
 
 
 require('./config/passport')(passport);
-//require('./config/passport');
  
+// add the routes to the app
 app.use('/users', users);
 app.use('/practices', practices);
+app.use('/referrals', referrals);
 
 //Index route
 app.get('/', (req, res) => {
