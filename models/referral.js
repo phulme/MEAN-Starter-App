@@ -14,7 +14,7 @@ const ReferralSchema = mongoose.Schema({
         medicarenumber: Number
     },
 
-    practioner: {
+    practice: {
         type: Schema.Types.ObjectId,
         ref: 'Practice'
 
@@ -51,6 +51,7 @@ const ReferralSchema = mongoose.Schema({
 const Referral = module.exports = mongoose.model('Referral', ReferralSchema);
 
 module.exports.addReferral = function (newReferral, callback) {
+    console.log(newReferral);
     newReferral.save(callback);
 };
 

@@ -10,22 +10,26 @@ const PracticeSchema = mongoose.Schema({
     suburb: String,
     postcode: Number,
     state: String,
-    users: [ {type: Schema.Types.ObjectId, ref: 'User'} ]
+    users: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 });
 
 const Practice = module.exports = mongoose.model('Practice', PracticeSchema);
 
-module.exports.addPractice = function(newPractice, callback){
-            newPractice.save(callback);
+module.exports.addPractice = function (newPractice, callback) {
+    newPractice.save(callback);
 
-    };
+};
 
-    module.exports.asignUserToPractice = function(user, practice, callback){
-        //const query = {practice: practice}
-        db.practice.update({_id:practice._id}, {
-            user: user._id
-        })
-        
+module.exports.findAll = function (callback) {
+    Practice.find({},callback);
+}
+
+module.exports.asignUserToPractice = function (user, practice, callback) {
+    //const query = {practice: practice}
+    db.practice.update({ _id: practice._id }, {
+        user: user._id
+    })
+
 
 };
 

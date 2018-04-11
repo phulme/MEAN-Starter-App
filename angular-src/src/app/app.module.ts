@@ -16,7 +16,8 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 
 import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
-import { ReferralsService } from "./services/referrals.service"
+import { ReferralsService } from "./services/referrals.service";
+import { UserService } from "./services/user.service";
 import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
 
 import { AuthGuard } from "./guards/auth.guard";
@@ -26,6 +27,7 @@ import { ImagingComponent } from './components/imaging/imaging.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { NewReferralComponent } from './components/referrals/new-referral/new-referral.component';
+import {AgGridModule} from 'ag-grid-angular';
 
 
 const appRoutes: Routes = [
@@ -90,9 +92,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    AgGridModule.withComponents([/*optional Angular Components to be used in the grid*/])
   ],
-  providers: [ValidateService, FlashMessagesService, AuthService, ReferralsService, AuthGuard],
+  providers: [ValidateService, FlashMessagesService, AuthService, ReferralsService, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

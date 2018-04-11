@@ -24,20 +24,8 @@ export class ReferralsService {
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:8080/referrals/new', referral, {headers: headers}).map(res => res.json());
   }
-
-  getUsersByRole(role) {
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:8080/users/role/' + role, {headers: headers}).map(res => res.json());
-
-  }
-
   loadToken() {
     const token = localStorage.getItem('id_token');
     this.authToken = token;
   }
-
-
 }

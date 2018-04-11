@@ -20,8 +20,7 @@ router.post('/add', (req, res, next) => {
     //user: req.body.user.id
  });
 
-
- Practice.addPractice(newPractice, (err, practice) => {
+Practice.addPractice( newPractice, (err, practice) => {
      if(err) {
          res.json({success: false, msg: 'Failed to register new Practice'});
      } else {
@@ -29,6 +28,18 @@ router.post('/add', (req, res, next) => {
      }
 
  })
+});
+
+// Return all practices in the system - only of use for testing
+router.get('/all', (req, res) => {
+    Practice.findAll(function(err, practices){
+        if (err) {
+            res.send('Error: Unable to return practices');
+        } else {
+            res.json(practices);
+        }
+
+    });
 });
 
 module.exports = router;

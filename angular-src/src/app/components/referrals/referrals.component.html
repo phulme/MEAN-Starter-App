@@ -1,22 +1,40 @@
 <h3>
   ALL Referrals
 </h3>
-<h5>This page is temp only used for testing</h5>
-<div *ngIf="referrals">
-  <ul class="list-group">
-    <h5>Patient</h5>
-    <li class="list-group-item" *ngFor="let referral of referrals">Firstname: {{ referral.patient.firstname }}</li>
-    <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.patient.surname }}</li>
-    <li class="list-group-item" *ngFor="let referral of referrals">Medicare Number: {{ referral.patient.medicarenumber }}</li>
-  </ul>
-  <h5>Doctor</h5>
-  <li class="list-group-item" *ngFor="let referral of referrals">Title: {{ referral.practioner.title }}</li>
-  <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.practioner.surname }}</li>
-  <li>Specialist</li>
-  <li class="list-group-item" *ngFor="let referral of referrals">Title: {{ referral.specialist.title }}</li>
-  <li class="list-group-item" *ngFor="let referral of referrals">Surname: {{ referral.specialist.surname }}</li>
-  <li>
-    <h5>Details</h5>
-  </li>
-  <li class="list-group-item" *ngFor="let referral of referrals">Description: {{ referral.description }}</li>
-</div>
+<h5>TEMP PAGE FOR DEV ONLY</h5>
+<button (click)="toggleTitle()"> click Here</button>
+
+<h4 class="title" style="display:none">
+  {{title}}
+</h4>
+
+
+  <table id="myTable" class="display" *ngIf="referrals">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Surname</th>
+        <th>Medicare NUmber</th>
+        <th>Doctor</th>
+        <th>Specialist</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let referral of referrals">
+          <td> {{ referral.patient.firstname }}</td>
+          <td> {{ referral.patient.surname }}</td>
+          <td> {{ referral.patient.medicarenumber }}</td>
+          <td> {{ referral.practioner.title }} {{ referral.practioner.surname }}</td>
+          <td> {{ referral.specialist.title }} {{ referral.specialist.surname }}</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  <h2>This is a ng-grid example</h2>
+<ag-grid-angular style="width: 90%; height: 215px;" class="ag-theme-balham"
+                [rowData]="rowData"
+                [columnDefs]="columnDefs">
+</ag-grid-angular>

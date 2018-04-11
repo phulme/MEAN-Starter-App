@@ -10,23 +10,21 @@ const config = require('../config/database');
 router.post('/new', (req, res, next) => {
  let newReferral = new Referral({
     patient: {
-        firstname: req.body.patient.firstname,
-        middlename: req.body.patient.middlename,
-        surname: req.body.patient.surname,
-        phone: [req.body.patient.phone],
-        email: [req.body.patient.email],
-        medicarenumber: req.body.patient.medicarenumber
+        firstname: req.body.patient.p_firstname,
+        middlename: req.body.patient.p_middlename,
+        surname: req.body.patient.p_surname,
+        phone: [req.body.patient.p_phone],
+        email: [req.body.patient.p_email],
+        medicarenumber: req.body.patient.p_medicarenumber
     },  
-    // Object ID of a practice
     practice: req.body.practice,
-    // ObjectID of a practioner
     practioner: req.body.practioner,
-    // Object ID of a specialist
     specialist: req.body.specialist,
     description: req.body.description,
-    expiry_date: req.body.expiry_date,
+    expiry_date: req.body.expiry,
     status: req.body.status,
  });
+ 
 Referral.addReferral(newReferral, (err, practice) => {
      if(err) {
          console.log(err);
@@ -44,7 +42,6 @@ router.get('/referrals', (req, res) => {
         if (err) {
             res.send('An error has occured');
         } else {
-            console.log(referrals);
             res.json(referrals);
         }
 
